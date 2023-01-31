@@ -37,7 +37,7 @@ class ActionController extends Controller
             'activationKey'         => (string) Str::uuid(),
             'forgottenPasswordKey'  => null
         ]);
-        Mail::to($user->email)->send(new AccountActivation($user->uuid, $user->activationKey));
+        // Mail::to($user->email)->send(new AccountActivation($user->uuid, $user->activationKey));
         $user->logActivity('Registered.');
         return response()->json(['success' => true]);
     }
