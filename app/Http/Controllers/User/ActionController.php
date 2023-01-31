@@ -88,7 +88,7 @@ class ActionController extends Controller
         $user = User::where('email', $request->email)->first();
         if(!empty($user) && $user->isActive()) {
             $user->update(['forgottenPasswordKey' => (string) Str::uuid()]);
-            Mail::to($user->email)->send(new PasswordRecovery($user->uuid, $user->forgottenPasswordKey));
+            // Mail::to($user->email)->send(new PasswordRecovery($user->uuid, $user->forgottenPasswordKey));
             $user->logActivity('Initiated password recovery.');
         }
         return response()->json(['success' => true]);
