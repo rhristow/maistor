@@ -24,4 +24,4 @@ app.config.globalProperties.$errorNotification = (message) => errorNotification(
 app.config.globalProperties.$hideModal = (id) => hideModal(id)
 app.config.globalProperties.$showModal = (id) => showModal(id)
 
-app.mount('#login_form')
+app.mount('#kt_body')

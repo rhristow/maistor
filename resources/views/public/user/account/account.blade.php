@@ -1,5 +1,5 @@
 @extends('_layouts/user/user')
 
 @section('content')
-    <user-dashboard></user-dashboard>
+    <user-account></user-account>
 @endsection
