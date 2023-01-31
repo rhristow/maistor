@@ -10,7 +10,7 @@ class PageController extends Controller
 {
     // PUBLIC PAGES //
     public function showHome() {
-         return view('public/home');
+         return view('public/landing/landing');
     }
 
     // GUEST PAGES //

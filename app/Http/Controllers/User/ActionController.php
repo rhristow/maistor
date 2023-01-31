@@ -65,13 +65,9 @@ class ActionController extends Controller
         $validator = Validator::make($request->all(), [
             'email'     => ['bail', 'required', 'email'],
             'password'  => ['bail', 'required'],
-            'token'     => ['bail', 'required']
         ]);
         if($validator->stopOnFirstFailure()->fails()) {
             return $this->getValidationError($validator);
-        }
-        if(!GoogleReCaptchaV3::setAction('submit')->verifyResponse($request->token, request()->ip())->isSuccess()) {
-            return response()->json(['success' => false, 'message' => 'Something went wrong. Please, try again later.']);
         }
         $user = User::where('email', $request->email)->first();
         if(empty($user)) {
