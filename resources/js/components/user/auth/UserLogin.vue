@@ -45,7 +45,7 @@ export default {
         </div>
         <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
             <div></div>
-            <a href="#" class="link-primary">Forgot Password ?</a>
+            <a href="/forgotten-password" class="link-primary">Forgot Password ?</a>
         </div>
         <div class="d-grid mb-10">
             <action-button class="btn btn-primary" type="submit" :loading="loading"> Login </action-button>
