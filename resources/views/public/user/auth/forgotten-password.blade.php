@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head><base href="../../../"/>
-		<title> Register </title>
+		<title> Forgotten Password </title>
 		<meta charset="utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -17,7 +17,7 @@
 				<div class="d-flex flex-column flex-lg-row-fluid w-lg-50 p-10 order-2 order-lg-1">
 					<div class="d-flex flex-center flex-column flex-lg-row-fluid">
 						<div id="login_form" class="w-lg-500px p-10">
-							<user-register></user-register>
+							<user-forgotten-password></user-forgotten-password>
 						</div>
 					</div>
 				</div>

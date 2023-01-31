@@ -23,29 +23,21 @@ class ActionController extends Controller
     public function register(Request $request) {
         $validator = Validator::make($request->all(), [
             'name'          => ['bail', 'required'],
-            'phoneNumber'   => ['bail', 'required', 'phone'],
-            'country_id'    => ['bail', 'required'],
             'email'         => ['bail', 'required', 'email', 'unique:users'],
             'password'      => ['bail', 'required', 'min:6', 'confirmed'],
-            'token'         => ['bail', 'required']
         ]);
         if($validator->stopOnFirstFailure()->fails()) {
             return $this->getValidationError($validator);
-        }
-        if(!GoogleReCaptchaV3::setAction('submit')->verifyResponse($request->token, request()->ip())->isSuccess()) {
-            return response()->json(['success' => false, 'message' => 'Something went wrong. Please, try again later.']);
         }
         $user = User::create([
             'uuid'                  => (string) Str::uuid(),
             'email'                 => $request->email,
             'password'              => bcrypt($request->password),
             'name'                  => $request->name,
-            'phoneNumber'           => $request->phoneNumber,
-            'country_id'            => $request->country_id,
             'activationKey'         => (string) Str::uuid(),
             'forgottenPasswordKey'  => null
         ]);
-        Mail::to($user->email)->send(new AccountActivation($user->uuid, $user->activationKey));
+        // Mail::to($user->email)->send(new AccountActivation($user->uuid, $user->activationKey));
         $user->logActivity('Registered.');
         return response()->json(['success' => true]);
     }
@@ -88,14 +80,10 @@ class ActionController extends Controller
 
     public function submitForgottenPassword(Request $request) {
         $validator = Validator::make($request->all(), [
-            'email' => ['bail', 'required', 'email'],
-            'token' => ['bail', 'required']
+            'email' => ['bail', 'required', 'email']
         ]);
         if($validator->stopOnFirstFailure()->fails()) {
             return $this->getValidationError($validator);
-        }
-        if(!GoogleReCaptchaV3::setAction('submit')->verifyResponse($request->token, request()->ip())->isSuccess()) {
-            return response()->json(['success' => false, 'message' => 'Something went wrong. Please, try again later.']);
         }
         $user = User::where('email', $request->email)->first();
         if(!empty($user) && $user->isActive()) {

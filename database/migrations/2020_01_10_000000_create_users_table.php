@@ -14,8 +14,8 @@ return new class extends Migration
             $table->string('email')->nullable()->unique();
             $table->longText('password')->nullable();
             $table->longText('name');
-            $table->longText('phoneNumber');
-            $table->foreignId('country_id');
+            $table->longText('phoneNumber')->nullable();
+            $table->foreignId('country_id')->nullable();
             $table->uuid('activationKey')->nullable()->unique();
             $table->uuid('forgottenPasswordKey')->nullable()->unique();
             $table->rememberToken();
