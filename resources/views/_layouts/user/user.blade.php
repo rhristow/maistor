@@ -6,10 +6,10 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="/assets/media/logos/favicon.ico" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
-		<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body id="kt_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 		<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
@@ -31,8 +31,8 @@
 				</div>
 			</div>
 		</div>
-		<script src="assets/plugins/global/plugins.bundle.js"></script>
-		<script src="assets/js/scripts.bundle.js"></script>
+		<script src="/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="/assets/js/scripts.bundle.js"></script>
 		@vite(['resources/js/app.js'])
 	</body>
 </html>

@@ -21,6 +21,7 @@ Route::group(['middleware' => 'guest'], function () {
 Route::group(['middleware' => 'auth'], function () {
     // --- USER PAGES --- //
     Route::get('/dashboard',                                            'User\PageController@showDashboard');                           // TO-DO
+    Route::get('/orders/new',                                           'User\PageController@showOrdersNew');                           // TO-DO
     Route::get('/account',                                              'User\PageController@showAccount');                             // TO-DO
     // --- USER ACTIONS --- //
     Route::get('/logout',                                               'User\ActionController@logout');                                // READY

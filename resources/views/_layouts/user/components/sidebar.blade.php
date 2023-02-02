@@ -1,8 +1,8 @@
 <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
         <a href="/">
-            <img alt="Logo" src="assets/media/logos/default-dark.svg" class="h-25px app-sidebar-logo-default" />
-            <img alt="Logo" src="assets/media/logos/default-small.svg" class="h-20px app-sidebar-logo-minimize" />
+            <img alt="Logo" src="/assets/media/logos/default-dark.svg" class="h-25px app-sidebar-logo-default" />
+            <img alt="Logo" src="/assets/media/logos/default-small.svg" class="h-20px app-sidebar-logo-minimize" />
         </a>
         <div id="kt_app_sidebar_toggle" class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary body-bg h-30px w-30px position-absolute top-50 start-100 translate-middle rotate" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="app-sidebar-minimize">
             <span class="svg-icon svg-icon-2 rotate-180">
@@ -26,6 +26,12 @@
                     <a class="menu-link {{ Request::is('account') ? 'active' : '' }} " href="/account">
                         <span class="menu-icon"> <i class="fa fa-user-circle" style="font-size: 18px;"></i> </span>
                         <span class="menu-title"> My Account </span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a class="menu-link {{ Request::is('orders/new') ? 'active' : '' }} " href="/orders/new">
+                        <span class="menu-icon"> <i class="fa fa-list" style="font-size: 18px;"></i> </span>
+                        <span class="menu-title"> New Order </span>
                     </a>
                 </div>
             </div>
